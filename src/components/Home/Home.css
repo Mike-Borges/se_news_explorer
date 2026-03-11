@@ -1,0 +1,97 @@
+.home {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.home__hero {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 576px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-direction: column;
+  padding-top: 80px;
+  background: url("../../assets/home_bckgrd.jpg") center/cover no-repeat;
+}
+
+.home__hero-title {
+  font-size: 60px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 0;
+}
+
+.home__hero-description {
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.home__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 56px;
+  height: 624px;
+}
+
+.home__content-image {
+  width: 464px;
+  height: 464px;
+  border-radius: 1000px;
+
+  margin-left: 104px;
+}
+
+.home__content-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 600px;
+}
+
+.home__content-title {
+  font-size: 48px;
+  color: #000000;
+  margin-bottom: 24px;
+}
+
+.home__search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 56px;
+  width: 608px;
+  height: 64px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.home__search-input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 24px;
+  font-size: 16px;
+  background-color: #fff;
+  margin-right: -176px;
+}
+
+.home__search-btn {
+  width: 176px;
+  height: 100%;
+  background-color: #2f71e5;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}

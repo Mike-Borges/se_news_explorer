@@ -1,3 +1,4 @@
+````markdown
 # News Explorer
 
 A React application that lets users search for news articles by keyword using the [News API](https://newsapi.org/).
@@ -28,6 +29,7 @@ git clone https://github.com/your-username/news-explorer.git
 cd news-explorer
 npm install
 ```
+````
 
 ### Environment Variables
 
@@ -46,3 +48,7 @@ npm start
 ## Design
 
 This project follows a detailed Figma layout. Pay close attention to spacing, typography, and component structure as outlined in the project brief.
+
+```
+
+```

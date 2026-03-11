@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 32px 104px 26px 104px;
+}
+
+.footer__text {
+  color: #b6bcbf;
+  font-size: 16px;
+}
+
+.footer__links {
+  display: flex;
+  gap: 40px;
+}
