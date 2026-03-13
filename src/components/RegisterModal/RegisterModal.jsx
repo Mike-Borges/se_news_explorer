@@ -1,11 +1,13 @@
 import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-export default function LoginModal({ onClose, onAltClick }) {
+export default function RegisterModal({ onClose, onAltClick, onSuccess }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [usernameError, setUsernameError] = useState("");
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -25,16 +27,37 @@ export default function LoginModal({ onClose, onAltClick }) {
     }
   };
 
-  const isFormValid = email && password && !emailError && !passwordError;
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+    if (!e.target.validity.valid) {
+      setUsernameError(e.target.validationMessage);
+    } else {
+      setUsernameError("");
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSuccess();
+  };
+
+  const isFormValid =
+    email &&
+    password &&
+    username &&
+    !emailError &&
+    !passwordError &&
+    !usernameError;
 
   return (
     <ModalWithForm
-      title="Sign in"
-      buttonText="Sign in"
+      title="Sign up"
+      buttonText="Sign up"
       onClose={onClose}
-      altText="Sign up"
+      altText="Sign in"
       onAltClick={onAltClick}
       isFormValid={isFormValid}
+      onSubmit={handleSubmit}
     >
       <label className="modal__label">
         Email
@@ -53,11 +76,24 @@ export default function LoginModal({ onClose, onAltClick }) {
         <input
           className="modal__input"
           type="password"
+          placeholder="Enter password"
           value={password}
           onChange={handlePasswordChange}
           required
         />
         <span className="modal__error">{passwordError}</span>
+      </label>
+      <label className="modal__label">
+        Username
+        <input
+          className="modal__input"
+          type="text"
+          placeholder="Enter username"
+          value={username}
+          onChange={handleUsernameChange}
+          required
+        />
+        <span className="modal__error">{usernameError}</span>
       </label>
     </ModalWithForm>
   );
