@@ -1,7 +1,29 @@
+import { useState, useEffect } from "react";
 import "./Home.css";
-import homePhoto from "../../assets/home_photo.jpg";
+import SearchForm from "../SearchForm/SearchForm";
+import About from "../About/About";
+import NewsCardList from "../NewsCardList/NewsCardList";
+import Preloader from "../Preloader/Preloader";
 
-export default function Home() {
+export default function Home({
+  onSearch,
+  isLoading,
+  articles,
+  searchError,
+  currentUser,
+  hasSearched,
+  savedArticles,
+  onSaveArticle,
+  keyword,
+}) {
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  useEffect(() => {
+    setVisibleCount(3);
+  }, [articles]);
+
+  const handleShowMore = () => setVisibleCount((prev) => prev + 3);
+
   return (
     <div className="home">
       <section className="home__hero">
@@ -9,30 +31,32 @@ export default function Home() {
         <p className="home__hero-description">
           This is the main landing page of our application.
         </p>
-        <form action="" className="home__search">
-          <input type="text" className="home__search-input" />
-          <button className="home__search-btn">Search</button>
-        </form>
+        <SearchForm onSearch={onSearch} />
       </section>
-      <section className="home__content">
-        <img
-          src={homePhoto}
-          alt="Photo of Michael Borges"
-          className="home__content-image"
-        />
-        <div className="home__content-info">
-          <h2 className="home__content-title">About the author </h2>
-          <p className="home__content-description">
-            Hi, I'm Michael Borges, a full-stack developer currently completing
-            the Software Engineering program at TripleTen. I build responsive,
-            user-friendly web applications using React, Node.js, Express, and
-            MongoDB. Through TripleTen I've developed hands-on experience with
-            REST APIs, JWT authentication, deployment on Google Cloud, and
-            modern JavaScript best practices. Whether you need a sleek frontend
-            or a robust backend, I'm here to help bring your ideas to life.
-          </p>
-        </div>
+      <section className="home__results">
+        {isLoading && <Preloader />}
+        {searchError && <p className="home__error">{searchError}</p>}
+        {!isLoading && !searchError && articles.length > 0 && (
+          <>
+            <NewsCardList
+              articles={articles.slice(0, visibleCount)}
+              currentUser={currentUser}
+              onSaveArticle={onSaveArticle}
+              savedArticles={savedArticles}
+              keyword={keyword}
+            />
+            {visibleCount < articles.length && (
+              <button className="home__show-more" onClick={handleShowMore}>
+                Show more
+              </button>
+            )}
+          </>
+        )}
+        {!isLoading && !searchError && hasSearched && articles.length === 0 && (
+          <p className="home__no-results">Nothing found.</p>
+        )}
       </section>
+      <About />
     </div>
   );
 }

@@ -24,21 +24,6 @@
   line-height: 24px;
 }
 
-.header__nav {
-  display: flex;
-  margin-right: 42px;
-  justify-content: flex-end;
-  flex: 1;
-}
-.header__link {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  width: 49px;
-  height: 24px;
-}
-
 .header__button {
   background-color: transparent;
   color: #fff;
@@ -51,4 +36,18 @@
   height: 48px;
   border-radius: 100px;
   border: 1px solid #fff;
+}
+
+.header_dark {
+  background-color: #fff;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.header__logo_dark {
+  color: #1a1a1a;
+}
+
+.header__button_dark {
+  color: #1a1a1a;
+  border-color: #1a1a1a;
 }

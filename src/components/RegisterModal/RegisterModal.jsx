@@ -1,7 +1,12 @@
 import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-export default function RegisterModal({ onClose, onAltClick, onSuccess }) {
+export default function RegisterModal({
+  onClose,
+  onAltClick,
+  onSuccess,
+  onLogin,
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -38,7 +43,7 @@ export default function RegisterModal({ onClose, onAltClick, onSuccess }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSuccess();
+    onSuccess({ username, email });
   };
 
   const isFormValid =

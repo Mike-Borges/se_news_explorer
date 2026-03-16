@@ -8,13 +8,16 @@ export default function Footer() {
         <a className="footer__link" href="https://practicum.com/">
           Home
         </a>
-        <a className="footer__link" href="https://practicum.com/">
+        <a className="footer__link" href="https://hub.tripleten.com/u/1803040f">
           TripleTen
         </a>
-        <a className="footer__link" href="https://practicum.com/">
+        <a className="footer__link" href="https://github.com/Mike-Borges">
           Github
         </a>
-        <a className="footer__link" href="https://practicum.com/">
+        <a
+          className="footer__link"
+          href="https://www.linkedin.com/in/michael-borges-689667288/"
+        >
           Linkdin
         </a>
       </div>

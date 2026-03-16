@@ -1,7 +1,12 @@
 import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-export default function LoginModal({ onClose, onAltClick }) {
+export default function LoginModal({
+  onClose,
+  onAltClick,
+  onLogin,
+  registeredUser,
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -25,6 +30,11 @@ export default function LoginModal({ onClose, onAltClick }) {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onLogin(registeredUser || { username: "testuser", email });
+  };
+
   const isFormValid = email && password && !emailError && !passwordError;
 
   return (
@@ -35,6 +45,7 @@ export default function LoginModal({ onClose, onAltClick }) {
       altText="Sign up"
       onAltClick={onAltClick}
       isFormValid={isFormValid}
+      onSubmit={handleSubmit}
     >
       <label className="modal__label">
         Email
