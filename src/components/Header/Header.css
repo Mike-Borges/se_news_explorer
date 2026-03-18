@@ -4,12 +4,14 @@
   position: absolute;
   background-color: transparent;
   border-bottom: 1px solid #c4c4c433;
+  z-index: 1;
+  font-family: "roboto", sans-serif;
 }
 
 .header__inner {
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   box-sizing: border-box;
 }
@@ -36,8 +38,14 @@
   height: 48px;
   border-radius: 100px;
   border: 1px solid #fff;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
-
 .header_dark {
   background-color: #fff;
   border-bottom: 1px solid #d1d1d1;

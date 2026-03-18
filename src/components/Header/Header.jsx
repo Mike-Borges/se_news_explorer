@@ -1,6 +1,8 @@
 import { useLocation } from "react-router-dom";
 import "./Header.css";
 import Navigation from "../Navigation/Navigation";
+import logoutWhite from "../../assets/logout_light.svg";
+import logoutDark from "../../assets/logout_dark.svg";
 
 export default function Header({ onLoginClick, onLogout, currentUser }) {
   const location = useLocation();
@@ -20,6 +22,13 @@ export default function Header({ onLoginClick, onLogout, currentUser }) {
           onClick={currentUser ? onLogout : onLoginClick}
         >
           {currentUser ? currentUser.username : "Sign In"}
+          {currentUser && (
+            <img
+              src={isSavedNews ? logoutDark : logoutWhite}
+              alt="logout"
+              className="header__logout-icon"
+            />
+          )}
         </button>
       </div>
     </header>

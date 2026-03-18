@@ -17,15 +17,19 @@ export default function SearchForm({ onSearch }) {
 
   return (
     <form className="search-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        className="search-form__input"
-        placeholder="Enter topic"
-        value={keyword}
-        onChange={(e) => setKeyword(e.target.value)}
-      />
-      {error && <span className="search-form__error">{error} </span>}
-      <button className="search-form__btn">Search</button>
+      <div className="search-form__bar">
+        <input
+          type="text"
+          className="search-form__input"
+          placeholder="Enter topic"
+          value={keyword}
+          onChange={(e) => setKeyword(e.target.value)}
+        />
+        <button className="search-form__btn" type="submit">
+          Search
+        </button>
+      </div>
+      {error && <span className="search-form__error">{error}</span>}
     </form>
   );
 }

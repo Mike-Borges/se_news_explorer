@@ -4,6 +4,7 @@ import SearchForm from "../SearchForm/SearchForm";
 import About from "../About/About";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import Preloader from "../Preloader/Preloader";
+import notFound from "../../assets/not-found.svg";
 
 export default function Home({
   onSearch,
@@ -27,9 +28,10 @@ export default function Home({
   return (
     <div className="home">
       <section className="home__hero">
-        <h1 className="home__hero-title">Welcome to the Home Page!</h1>
+        <h1 className="home__hero-title">What's going on in the world?</h1>
         <p className="home__hero-description">
-          This is the main landing page of our application.
+          Find the latest news on any topic and save them in your personal
+          account.
         </p>
         <SearchForm onSearch={onSearch} />
       </section>
@@ -38,6 +40,7 @@ export default function Home({
         {searchError && <p className="home__error">{searchError}</p>}
         {!isLoading && !searchError && articles.length > 0 && (
           <>
+            <h2 className="home__results-title">Search results</h2>
             <NewsCardList
               articles={articles.slice(0, visibleCount)}
               currentUser={currentUser}
@@ -53,7 +56,17 @@ export default function Home({
           </>
         )}
         {!isLoading && !searchError && hasSearched && articles.length === 0 && (
-          <p className="home__no-results">Nothing found.</p>
+          <div className="home__not-found">
+            <img
+              className="home__not-found-icon"
+              src={notFound}
+              alt="Nothing found"
+            />
+            <h2 className="home__not-found-title">Nothing found</h2>
+            <p className="home__not-found-subtitle">
+              Sorry, but nothing matched your search terms.
+            </p>
+          </div>
         )}
       </section>
       <About />

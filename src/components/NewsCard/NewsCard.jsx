@@ -1,4 +1,10 @@
+import { useState } from "react";
 import "./NewsCard.css";
+import bookmarkDefault from "../../assets/bookmark.svg";
+import bookmarkHover from "../../assets/bookmarkhover.svg";
+import bookmarkSaved from "../../assets/marked.svg";
+import trashDefault from "../../assets/trash-light.svg";
+import trashHover from "../../assets/trash-dark.svg";
 
 export default function NewsCard({
   article,
@@ -9,6 +15,8 @@ export default function NewsCard({
   onDeleteArticle,
   isSavedNews,
 }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   const { source, title, publishedAt, description, urlToImage, url } = article;
 
   const isSaved = savedArticles?.some((a) => a.url === url);
@@ -40,7 +48,24 @@ export default function NewsCard({
         className={`news-card__save-btn ${isSaved ? "news-card__save-btn_active" : ""}`}
         type="button"
         onClick={handleSaveClick}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
+        <img
+          src={
+            isSavedNews
+              ? isHovered
+                ? trashHover
+                : trashDefault
+              : isSaved
+                ? bookmarkSaved
+                : isHovered
+                  ? bookmarkHover
+                  : bookmarkDefault
+          }
+          alt="save"
+          className="news-card__save-icon"
+        />
         <span className="news-card__save-tooltip">
           {isSavedNews
             ? "Remove from saved"

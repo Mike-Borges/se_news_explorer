@@ -5,6 +5,18 @@
   width: 608px;
   height: 64px;
   border-radius: 100px;
+  overflow: visible;
+  z-index: 1;
+  margin-top: 56px;
+  font-family: "roboto", sans-serif;
+  position: relative;
+}
+
+.search-form__bar {
+  display: flex;
+  width: 608px;
+  height: 64px;
+  border-radius: 100px;
   overflow: hidden;
 }
 
@@ -17,6 +29,7 @@
   font-size: 16px;
   background-color: #fff;
   margin-right: -176px;
+  border-radius: 100px 0 0 100px;
 }
 
 .search-form__btn {
@@ -29,4 +42,20 @@
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
+}
+
+.search-form__btn:hover {
+  background-color: #347eff;
+}
+
+.search-form__btn:active {
+  background-color: #2a66c7;
+}
+
+.search-form__error {
+  position: absolute;
+  bottom: -24px;
+  left: 24px;
+  font-size: 14px;
+  color: red;
 }

@@ -1,4 +1,6 @@
 import "./Footer.css";
+import github from "../../assets/github.svg";
+import linkedin from "../../assets/linkedin.svg";
 
 export default function Footer() {
   return (
@@ -12,13 +14,13 @@ export default function Footer() {
           TripleTen
         </a>
         <a className="footer__link" href="https://github.com/Mike-Borges">
-          Github
+          <img src={github} alt="GitHub" className="footer__icon" />
         </a>
         <a
           className="footer__link"
           href="https://www.linkedin.com/in/michael-borges-689667288/"
         >
-          Linkdin
+          <img src={linkedin} alt="LinkedIn" className="footer__icon" />
         </a>
       </div>
     </footer>

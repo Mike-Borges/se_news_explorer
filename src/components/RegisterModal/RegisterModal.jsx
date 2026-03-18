@@ -1,12 +1,7 @@
 import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-export default function RegisterModal({
-  onClose,
-  onAltClick,
-  onSuccess,
-  onLogin,
-}) {
+export default function RegisterModal({ onClose, onAltClick, onSuccess }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");

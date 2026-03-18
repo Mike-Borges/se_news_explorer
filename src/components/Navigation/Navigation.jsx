@@ -1,22 +1,26 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navigation.css";
 
 export default function Navigation({ currentUser, isSavedNews }) {
   return (
     <nav className="navigation">
-      <Link
-        className={`navigation__link ${isSavedNews ? "navigation__link_dark" : ""}`}
+      <NavLink
+        className={({ isActive }) =>
+          `navigation__link ${isActive ? "navigation__link_active" : ""} ${isSavedNews ? "navigation__link_dark" : ""}`
+        }
         to="/"
       >
         Home
-      </Link>
+      </NavLink>
       {currentUser && (
-        <Link
-          className={`navigation__link ${isSavedNews ? "navigation__link_dark" : ""}`}
+        <NavLink
+          className={({ isActive }) =>
+            `navigation__link ${isActive ? "navigation__link_active" : ""} ${isSavedNews ? "navigation__link_dark" : ""}`
+          }
           to="/saved-news"
         >
           Saved Articles
-        </Link>
+        </NavLink>
       )}
     </nav>
   );
