@@ -15,10 +15,12 @@ export default function About() {
           Hi, I'm Michael Borges, a full-stack developer currently completing
           the Software Engineering program at TripleTen. I build responsive,
           user-friendly web applications using React, Node.js, Express, and
-          MongoDB. Through TripleTen I've developed hands-on experience with
-          REST APIs, JWT authentication, deployment on Google Cloud, and modern
-          JavaScript best practices. Whether you need a sleek frontend or a
-          robust backend, I'm here to help bring your ideas to life.
+          MongoDB.<br></br>
+          <br />
+          Through TripleTen I've developed hands-on experience with REST APIs,
+          JWT authentication, deployment on Google Cloud, and modern JavaScript
+          best practices. Whether you need a sleek frontend or a robust backend,
+          I'm here to help bring your ideas to life.
         </p>
       </div>
     </section>

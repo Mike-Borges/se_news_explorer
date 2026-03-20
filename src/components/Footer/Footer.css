@@ -13,6 +13,7 @@
 .footer__links {
   display: flex;
   gap: 40px;
+  align-items: center;
 }
 
 .footer__link {
@@ -20,4 +21,14 @@
   text-decoration: none;
   font-size: 18px;
   font-family: "roboto", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    margin: 24px 40px 18px 40px;
+  }
+
+  .footer__links {
+    gap: 24px;
+  }
 }

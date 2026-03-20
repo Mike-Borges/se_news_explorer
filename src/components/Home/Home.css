@@ -109,3 +109,33 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .home__hero {
+    gap: 16px;
+    min-height: 400px;
+  }
+
+  .home__hero-title {
+    width: 385px;
+    height: 80px;
+    font-size: 36px;
+    margin-top: 38px;
+    font-weight: 400;
+  }
+
+  .home__results {
+    margin-right: 40px;
+  }
+
+  .home__results-title {
+    margin: 40px 40px 0;
+    font-size: 30px;
+  }
+
+  .home__show-more {
+    margin-top: 0;
+    height: 56px;
+    width: 240px;
+  }
+}

@@ -26,12 +26,14 @@ export default function SavedNews({
           </p>
         )}
       </section>
-      <NewsCardList
-        articles={savedArticles}
-        currentUser={currentUser}
-        onDeleteArticle={onDeleteArticle}
-        isSavedNews={true}
-      />
+      {savedArticles.length > 0 && (
+        <NewsCardList
+          articles={savedArticles}
+          currentUser={currentUser}
+          onDeleteArticle={onDeleteArticle}
+          isSavedNews={true}
+        />
+      )}
     </div>
   );
 }

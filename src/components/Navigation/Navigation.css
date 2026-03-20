@@ -31,3 +31,15 @@
 .navigation__link_dark.navigation__link_active {
   border-bottom: 3px solid #1a1a1a;
 }
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    margin: 0 16px 0 0;
+    gap: 16px;
+  }
+
+  .navigation__link {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}

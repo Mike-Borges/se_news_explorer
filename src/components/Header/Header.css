@@ -45,6 +45,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  font-weight: 500;
 }
 .header_dark {
   background-color: #fff;
@@ -58,4 +59,35 @@
 .header__button_dark {
   color: #1a1a1a;
   border-color: #1a1a1a;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 66px;
+  }
+
+  .header__logo {
+    margin: 22.73px 0 18.47px 40px;
+  }
+
+  .header__inner {
+    margin-right: 40px;
+  }
+
+  .header__button {
+    height: 40px;
+    font-size: 16px;
+    margin-right: 40px;
+  }
+
+  .header__button_loggedout {
+    width: 152px;
+  }
+
+  .header__button_loggedin {
+    width: auto;
+    padding: 0 16px;
+    white-space: nowrap;
+    margin-right: 0;
+  }
 }

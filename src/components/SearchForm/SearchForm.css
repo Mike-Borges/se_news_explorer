@@ -59,3 +59,9 @@
   font-size: 14px;
   color: red;
 }
+
+@media screen and (max-width: 768px) {
+  .search-form {
+    margin-top: 32px;
+  }
+}

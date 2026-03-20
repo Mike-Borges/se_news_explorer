@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import "./ModalWithForm.css";
 import close from "../../assets/close.svg";
 
@@ -10,20 +10,32 @@ export default function ModalWithForm({
   altText,
   isFormValid,
   onSubmit,
+  isOpen,
   children,
 }) {
+  const firstInputRef = useRef(null);
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         onClose();
       }
     };
-
     document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [onClose]);
+
+  useEffect(() => {
+    const isMobileOrTablet = window.innerWidth < 1024;
+    if (isMobileOrTablet && firstInputRef.current) {
+      const timer = setTimeout(() => {
+        firstInputRef.current.focus();
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
 
   return (
     <div className="modal" onClick={onClose}>
@@ -33,7 +45,7 @@ export default function ModalWithForm({
         </button>
         <h2 className="modal__title">{title}</h2>
         <form className="modal__body" onSubmit={onSubmit}>
-          {children}
+          {children(firstInputRef)}
           <button
             className="modal__submit-btn"
             type="submit"

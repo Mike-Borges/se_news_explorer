@@ -6,6 +6,7 @@ export default function LoginModal({
   onAltClick,
   onLogin,
   registeredUser,
+  isOpen,
 }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -46,30 +47,36 @@ export default function LoginModal({
       onAltClick={onAltClick}
       isFormValid={isFormValid}
       onSubmit={handleSubmit}
+      isOpen={isOpen}
     >
-      <label className="modal__label">
-        Email
-        <input
-          className="modal__input"
-          type="email"
-          placeholder="Enter email"
-          value={email}
-          onChange={handleEmailChange}
-          required
-        />
-        <span className="modal__error">{emailError}</span>
-      </label>
-      <label className="modal__label">
-        Password
-        <input
-          className="modal__input"
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-          required
-        />
-        <span className="modal__error">{passwordError}</span>
-      </label>
+      {(firstInputRef) => (
+        <>
+          <label className="modal__label">
+            Email
+            <input
+              ref={firstInputRef}
+              className="modal__input"
+              type="email"
+              placeholder="Enter email"
+              value={email}
+              onChange={handleEmailChange}
+              required
+            />
+            <span className="modal__error">{emailError}</span>
+          </label>
+          <label className="modal__label">
+            Password
+            <input
+              className="modal__input"
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+              required
+            />
+            <span className="modal__error">{passwordError}</span>
+          </label>
+        </>
+      )}
     </ModalWithForm>
   );
 }

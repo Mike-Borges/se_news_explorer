@@ -18,7 +18,7 @@ export default function Header({ onLoginClick, onLogout, currentUser }) {
         </div>
         <Navigation currentUser={currentUser} isSavedNews={isSavedNews} />
         <button
-          className={`header__button ${isSavedNews ? "header__button_dark" : ""}`}
+          className={`header__button ${isSavedNews ? "header__button_dark" : ""} ${currentUser ? "header__button_loggedin" : "header__button_loggedout"}`}
           onClick={currentUser ? onLogout : onLoginClick}
         >
           {currentUser ? currentUser.username : "Sign In"}

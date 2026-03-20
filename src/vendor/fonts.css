@@ -33,3 +33,12 @@
     url("./fonts/roboto-slab-400.woff") format("woff"),
     url("./fonts/roboto-slab-400.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: "roboto-slab";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url("./fonts/roboto-700.woff") format("woff"),
+    url("./fonts/roboto-700.woff2") format("woff2");
+}

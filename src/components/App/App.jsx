@@ -114,6 +114,7 @@ function App() {
           onAltClick={handleRegisterClick}
           onLogin={handleLogin}
           registeredUser={registeredUser}
+          isOpen={activeModal === "login"}
         />
       )}
       {activeModal === "register" && (
@@ -121,6 +122,7 @@ function App() {
           onClose={handleCloseModal}
           onAltClick={handleLoginClick}
           onSuccess={handleRegister}
+          isOpen={activeModal === "register"}
         />
       )}
       {activeModal === "registerSuccess" && (
