@@ -4,7 +4,7 @@
   position: absolute;
   background-color: transparent;
   border-bottom: 1px solid #c4c4c433;
-  z-index: 1;
+  z-index: 100;
   font-family: "roboto", sans-serif;
 }
 
@@ -47,6 +47,7 @@
   gap: 8px;
   font-weight: 500;
 }
+
 .header_dark {
   background-color: #fff;
   border-bottom: 1px solid #d1d1d1;
@@ -59,6 +60,118 @@
 .header__button_dark {
   color: #1a1a1a;
   border-color: #1a1a1a;
+}
+
+.header__menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.header__menu-btn_dark {
+  color: #1a1a1a;
+}
+
+.header__mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  background-color: #1a1b22;
+
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 200;
+  padding: 16px 16px 24px 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__mobile-menu_open {
+  transform: translateX(0);
+}
+
+.header__menu-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  align-self: flex-end;
+  width: 24px;
+  height: 24px;
+}
+
+.header__mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.header__mobile-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  width: 100%;
+  height: 72px;
+  align-content: center;
+  padding-top: 16px;
+  font-family: "Roboto", sans-serif;
+  border-top: 1px solid #c4c4c433;
+  margin-left: -16px;
+  padding-left: 16px;
+  width: calc(100% + 32px);
+  box-sizing: border-box;
+}
+
+.header__mobile-signin {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 100px;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  width: 288px;
+  height: 56px;
+}
+
+.header__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 199;
+}
+
+.header__menu-icon {
+  display: block;
+  width: 16px;
+  height: 2px;
+  background-color: #fff;
+  margin: 3px 0;
+}
+
+.header__menu-btn_dark .header__menu-icon {
+  background-color: #1a1a1a;
+}
+
+.header__mobile-top {
+  padding-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  width: 288px;
+}
+
+.header__mobile-logo {
+  color: #fff;
+  font-size: 16px;
 }
 
 @media screen and (max-width: 768px) {
@@ -75,19 +188,31 @@
   }
 
   .header__button {
-    height: 40px;
-    font-size: 16px;
-    margin-right: 40px;
-  }
-
-  .header__button_loggedout {
-    width: 152px;
-  }
-
-  .header__button_loggedin {
-    width: auto;
-    padding: 0 16px;
-    white-space: nowrap;
     margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    height: 56px;
+  }
+
+  .header__inner {
+    margin-right: 16px;
+  }
+
+  .header__logo {
+    font-size: 16px;
+    margin: 16px 0 16px 16px;
+  }
+
+  .header__menu-btn {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+
+  .header__button {
+    display: none;
   }
 }

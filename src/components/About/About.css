@@ -62,3 +62,29 @@
     margin: 16px 0;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .about {
+    flex-direction: column;
+    padding: 32px 16px 24px 16px;
+    overflow: hidden;
+    box-sizing: border-box;
+    gap: 24px;
+  }
+
+  .about__image {
+    height: 272px;
+    max-width: 272px;
+  }
+
+  .about__info {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .about__title {
+    width: 100%;
+  }
+}

@@ -35,7 +35,9 @@
   margin-bottom: 0;
   font-family: "roboto-slab", sans-serif;
   max-width: 608px;
+  font-weight: 400;
   z-index: 1;
+  font-style: normal;
 }
 
 .home__hero-description {
@@ -137,5 +139,33 @@
     margin-top: 0;
     height: 56px;
     width: 240px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .home__hero {
+    height: 536px;
+  }
+
+  .home__hero-title {
+    width: 285px;
+    margin: 0;
+    font-family: "roboto-slab", sans-serif;
+  }
+  .home__hero-description {
+    width: 288px;
+    text-align: left;
+  }
+
+  .home__results {
+    margin: 0 auto;
+  }
+  .home__results-title {
+    margin: 32px 16px 42px;
+  }
+
+  .home__show-more {
+    width: 288px;
+    margin-bottom: 24px;
   }
 }

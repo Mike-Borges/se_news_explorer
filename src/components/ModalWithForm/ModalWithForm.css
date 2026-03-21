@@ -175,3 +175,33 @@
     max-height: 380px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .modal {
+    align-items: flex-end;
+  }
+
+  .modal__content {
+    width: 100%;
+    max-width: 100%;
+    height: calc(100vh - 56px);
+    max-height: none;
+    border-radius: 16px 16px 0 0;
+    padding: 16px 17px;
+    box-sizing: border-box;
+    gap: 18px;
+  }
+
+  .modal__label {
+    gap: 8px;
+  }
+
+  .modal__close-btn {
+    display: none;
+  }
+
+  .modal__submit-btn {
+    width: 100%;
+    margin-top: -7px;
+  }
+}
