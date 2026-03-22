@@ -144,9 +144,9 @@ This frontend connects to a separate Express/Node.js backend that handles user r
 
 ## Deployment
 
-The frontend is deployed via [GitHub Pages / Vercel / Netlify — update as applicable].
+The frontend is deployed via GitHub Pages.
 
-**Live site:** [link to deployed frontend]
+**Live site:** [News Explorer](https://mike-borges.github.io/se_news_explorer/)
 
 ---
 
