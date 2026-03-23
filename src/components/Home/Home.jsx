@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./Home.css";
 import SearchForm from "../SearchForm/SearchForm";
 import About from "../About/About";
@@ -18,10 +18,12 @@ export default function Home({
   keyword,
 }) {
   const [visibleCount, setVisibleCount] = useState(3);
+  const [prevArticles, setPrevArticles] = useState(articles);
 
-  useEffect(() => {
+  if (prevArticles !== articles) {
+    setPrevArticles(articles);
     setVisibleCount(3);
-  }, [articles]);
+  }
 
   const handleShowMore = () => setVisibleCount((prev) => prev + 3);
 

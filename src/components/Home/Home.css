@@ -33,7 +33,7 @@
   color: #ffffff;
   margin-top: 80px;
   margin-bottom: 0;
-  font-family: "roboto-slab", sans-serif;
+  font-family: "roboto-slab", Georgia, serif;
   max-width: 608px;
   font-weight: 400;
   z-index: 1;
@@ -46,7 +46,7 @@
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: "roboto", sans-serif;
+  font-family: "roboto", Arial, sans-serif;
   z-index: 1;
 }
 
@@ -65,7 +65,7 @@
   margin: 40px 104px 64px;
   line-height: 1.2;
   max-width: 530px;
-  font-family: "roboto-slab", sans-serif;
+  font-family: "roboto-slab", Georgia, serif;
   align-self: flex-start;
 }
 
@@ -80,7 +80,7 @@
   cursor: pointer;
   margin-top: 64px;
   margin-bottom: 40px;
-  font-family: "roboto", sans-serif;
+  font-family: "roboto", Arial, sans-serif;
 }
 
 .home__show-more:hover {
@@ -100,34 +100,29 @@
   color: #1a1b22;
   margin-bottom: 16px;
   margin-top: 31.5px;
-  font-family: "roboto-slab", sans-serif;
+  font-family: "roboto-slab", Georgia, serif;
 }
 
 .home__not-found-subtitle {
   font-size: 18px;
   color: #1a1b22;
   text-align: center;
-  font-family: "roboto", sans-serif;
+  font-family: "roboto", Arial, sans-serif;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1319px) {
   .home__hero {
     gap: 16px;
     min-height: 400px;
   }
 
   .home__hero-title {
-    width: 385px;
-    height: 80px;
+    max-width: 385px;
     font-size: 36px;
     margin-top: 38px;
     font-weight: 400;
-  }
-
-  .home__results {
-    margin-right: 40px;
   }
 
   .home__results-title {
@@ -142,7 +137,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 629px) {
   .home__hero {
     height: 536px;
   }
@@ -150,7 +145,7 @@
   .home__hero-title {
     width: 285px;
     margin: 0;
-    font-family: "roboto-slab", sans-serif;
+    font-family: "roboto-slab", Georgia, serif;
   }
   .home__hero-description {
     width: 288px;
